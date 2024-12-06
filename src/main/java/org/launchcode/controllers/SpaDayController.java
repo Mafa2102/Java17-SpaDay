@@ -41,6 +41,7 @@ public class SpaDayController {
                 "<select name = 'manipedi'>" +
                 "<option value = 'manicure'>Manicure</option>" +
                 "<option value = 'pedicure'>Pedicure</option>" +
+                "<option value = 'both'>Both</option>" +
                 "</select><br>" +
                 "<input type = 'submit' value = 'Submit'>" +
                 "</form>";
@@ -62,6 +63,15 @@ public class SpaDayController {
                 appropriateFacials.add(facials.get(i));
             }
         }
+
+        String[] colors = {"red", "blue", "green", "purple", "orange" };
+
+        model.addAttribute("name",name);
+        model.addAttribute("skintype",skintype);
+        model.addAttribute("manipedi",manipedi);
+        model.addAttribute("facials",facials);
+        model.addAttribute("appropriateFacials",appropriateFacials);
+        model.addAttribute("colors", colors);
 
         return "menu";
     }
